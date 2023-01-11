@@ -17,7 +17,7 @@ Javascript objects are what makes the javascript programming so versatile.
 - Methods allows objects to "act" like `object.doSomething`
 - Method can reference the object as `this`
 - The value of `this` is defined at runtime.
-> _-  the `this` keyword in javascript refers to the current object that the code is executed on. it can be used to access the properties of the current object and to call the method of the current object._
+> _-the `this` keyword in javascript refers to the current object that the code is executed on. it can be used to access the properties of the current object  and to call the method of the current object._
 - When a function is declared, it may use `this`, but that `this` has no value until the function is called.
 - When a function is called in the "method" syntax: `object.method(), the value of `this` during the call is `object`
 
@@ -25,18 +25,18 @@ Javascript objects are what makes the javascript programming so versatile.
 
  - In JavaScript unlike other class based language like Java/C++, if you don't define a constructor , JavaScript will define an empty constructor
 
-
-    > function exampleClass() {
+```
+     function exampleClass() {
         `this.property` = 'some value';
 
         `this.method` = function() (
             console.log(`this.property`)
         )
     }
-
-    > const obj = `new exampleClass()`
+    
+    const obj = `new exampleClass()`
     console.log(obj.property) //Output: some value
     obj.method() //Output: `some value`
-
+```
 The `this` keyword is used inside the `exampleClass` constructor function to refer to the object beig constructed and it is used inside the `method` function to refer to the `obj` instance of `exampleClass`
 
