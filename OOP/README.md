@@ -40,3 +40,8 @@ Javascript objects are what makes the javascript programming so versatile.
 
 The `this` keyword is used inside the `exampleClass` constructor function to refer to the object beig constructed and it is used inside the `method` function to refer to the `obj` instance of `exampleClass`
 
+- There are four main concept of OOP and they are
+1. Encapsulation: It is the process of hiding the implementation details of an object and making it available only through a public interface.
+2. Inheritance: It is the process of creating a new object based on an existing object, and reusing its properties and methods.
+3. Abstraction: Abstraction is the process of creating a simplified version of an object that conatin only the essential properties and method
+3. Polymorphism: It is the ability of an object to take on many forms.
