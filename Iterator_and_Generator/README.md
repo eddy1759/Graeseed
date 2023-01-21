@@ -9,3 +9,8 @@ An iterator in javascript is an `object` that defines a sequence of values, whic
     }
 ```
 - An `iterable` is something that can be iterated over e.g arrays string. 
+
+# Generator
+A generator is a special kind of function that can be paused and resumed at a later time. This allows us to create an iterator that can produce a sequence of values, one at a time.
+
+To create a generator function, we use the `function*` syntax instead of the regular function keyword.
