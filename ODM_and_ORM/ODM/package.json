@@ -1,0 +1,17 @@
+{
+  "name": "odm",
+  "version": "1.0.0",
+  "description": "ODM is a type of software that maps data from a database to an object in an object-oriented programming language. This mapping allows developers to easily store, manipulate, and retrieve data from the database without having to worry about the underlying database structure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1"
+  }
+}
