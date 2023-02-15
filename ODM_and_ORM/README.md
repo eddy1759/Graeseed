@@ -1,0 +1,1 @@
+ODM, or Object-Document Mapping/Mapper, is a technique used in computer programming to facilitate the integration of databases and object-oriented programming languages. It is often used in web development to connect databases with the website or application.
