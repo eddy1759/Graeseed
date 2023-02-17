@@ -32,14 +32,11 @@ const BookModelSchema = new Schema({
         required: true,
         min: [20, 'pages must be greater than or equal to 20']
     },
-    createAt: {
-        type: Date,
-        default: Date.now
-    },
-    lastUpdatedAt: {
-        type: Date,
-        default: Date.now
-    },
-});
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'authors'
+    }},
+    {timestamps: true}
+);
 
 module.exports = mongoose.model("books", BookModelSchema);
