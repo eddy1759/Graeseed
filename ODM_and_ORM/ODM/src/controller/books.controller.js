@@ -3,7 +3,7 @@ const Book = require('../models/books')
 // implementing CRUD function
 
 // GET ALL BOOK (READ)
-const getBooks = async(req, res) => {
+async function getBooks (req, res){
     try {
         const books = await Book.find({})
         res.status(200).json({
@@ -17,7 +17,7 @@ const getBooks = async(req, res) => {
 }
 
 // GET BOOK By ID (READ)
-const getBookById = async(req, res) => {
+async function getBookById (req, res){
     const {id} = req.params.id
     try {
        const book = await Book.findById(id)
@@ -35,22 +35,9 @@ const getBookById = async(req, res) => {
     }
 }
 
-// Get Books BY Authors
-const getBooksByAuthor = async(req, res) => {
-    try {
-        const books = await Book.find({}).populate('author')
-        res.status(200).json({
-            status: true,
-            data: books
-        })
-    } catch (error) {
-        console.log("Error getting books: ", error)
-        res.status(500).send("Error getting books")
-    }
-}
 
 // CREATE BOOK
-const createBook = async(req, res) => {
+async function createBook (req, res) {
     const {
         title,
         year,
@@ -74,7 +61,7 @@ const createBook = async(req, res) => {
 }
 
 // Updating Books
-const updateBook = async(req, res) => {
+async function updateBook (req, res) {
     const id = req.params.id
     const bookToUpdate = req.body
     try {
@@ -90,7 +77,7 @@ const updateBook = async(req, res) => {
     } 
 }
 
-const deleteBookByID = async(req, res) => {
+async function deleteBookByID (req, res) {
     const id = req.params.id
     try {
         const book = await Book.findByIdAndDelete(id)
@@ -108,7 +95,6 @@ const deleteBookByID = async(req, res) => {
 module.exports = {
     getBooks,
     getBookById,
-    getBooksByAuthor,
     createBook,
     updateBook,
     deleteBookByID

@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const CONFIG = require('./config')
+const CONFIG = require('./config').default
+require('dotenv').config();
 
-function connectToMongoDb() {
+const connectToMongoDb = () => {
+    mongoose.set('strictQuery', false);
     mongoose.connect(CONFIG.DB_URI)
 
     mongoose.connection.on(

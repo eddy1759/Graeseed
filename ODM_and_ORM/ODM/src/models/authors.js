@@ -5,7 +5,6 @@ const Schema = mongoose.Schema
 const AuthorModelSchema = new Schema({
     name: {
         type: String,
-        required: true,
         trim: true
     },
     dob: {

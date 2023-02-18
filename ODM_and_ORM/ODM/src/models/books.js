@@ -31,10 +31,6 @@ const BookModelSchema = new Schema({
         type: Number,
         required: true,
         min: [20, 'pages must be greater than or equal to 20']
-    },
-    author: {
-        type: Schema.Types.ObjectId,
-        ref: 'authors'
     }},
     {timestamps: true}
 );

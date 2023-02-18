@@ -3,7 +3,7 @@ const Author = require('../models/authors')
 // implementing CRUD function
 
 // GET ALL Authors (READ)
-const getAuthors = async(req, res) => {
+async function getAuthors(req, res) {
     try {
         const authors = await Author.find({})
         res.status(200).json({
@@ -17,8 +17,8 @@ const getAuthors = async(req, res) => {
 }
 
 // GET Authors By ID (READ)
-const getAuthorsById = async(req, res) => {
-    const {id} = req.params.id
+async function getAuthorsById(req, res) {
+    const id = req.params.id
     try {
        const author = await Author.findById(id)
        if (!author){
@@ -37,18 +37,15 @@ const getAuthorsById = async(req, res) => {
 
 
 // CREATE Author
-const createAuthor = async(req, res) => {
+async function createAuthor (req, res){
     const {
-        title,
-        year,
-        isbn,
-        price,
-        rating,
-        pages
+        name,
+        dob,
+        country
     } = req.body
 
     try {
-        const authorToSave = {title,year,isbn,price,rating,pages}
+        const authorToSave = {name,dob,country}
        const author = await Author.create(authorToSave) 
        res.status(200).json({
            status: true,
@@ -61,7 +58,7 @@ const createAuthor = async(req, res) => {
 }
 
 // Updating Authors
-const updateAuthor = async(req, res) => {
+async function updateAuthor (req, res){
     const id = req.params.id
     const authorToUpdate = req.body
     try {
@@ -77,7 +74,7 @@ const updateAuthor = async(req, res) => {
     } 
 }
 
-const deleteAuthorByID = async(req, res) => {
+async function deleteAuthorByID (req, res){
     const id = req.params.id
     try {
         const author = await Author.findByIdAndDelete(id)
