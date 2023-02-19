@@ -1,0 +1,22 @@
+{
+  "name": "orm",
+  "version": "1.0.0",
+  "description": "ORM stands for Object-Relational Mapping, and it is a programming technique that allows developers to interact with relational databases using object-oriented programming concepts. The basic idea behind ORM is to abstract away the complexities of working with a database, so that developers can interact with the database using code that is closer to the way they think about the data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0"
+  }
+}
