@@ -1,0 +1,18 @@
+{
+  "name": "db_index",
+  "version": "1.0.0",
+  "description": "- A database index is a data structure that is used to improve the performance of queries. Essentially, an index is a way to organize data in the database to allow for faster search and retrieval of information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0",
+    "pg": "^8.9.0"
+  }
+}
