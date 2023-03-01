@@ -5,8 +5,7 @@ const CONFIG = require('./config')
 function dbSetup() {
     mongoose.set('strictQuery', false)
     
-    mongoose.connect(CONFIG.DB || "mongodb+srv://eddy:Python1759@cluster0.wjcbxa2.mongodb.net/bookstore?retryWrites=true&w=majority"
-    )
+    mongoose.connect(CONFIG.DB)
 
     mongoose.connection.on("connected", () => {
         console.log("Connected to database successful")
