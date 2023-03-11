@@ -43,7 +43,6 @@ userRouter.post('/login', async (req, res) => {
 
 userRouter.get('/profile', async (req, res) => {
     try {
-        console.log(req.session)
         const user = await userModel.findById(req.session.userId);
         if (!user) {
         return res.status(401).send('Not authenticated');

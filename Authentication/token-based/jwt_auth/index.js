@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000
 
 dbSetup()
 app.use(express.json())
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use(userRouter);
 
 app.get('/', (req, res) => {

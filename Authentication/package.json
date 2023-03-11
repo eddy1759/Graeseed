@@ -5,14 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./token-based/src/index.js"
+    "dev1": "node ./token-based/passport_jwt/src/index.js",
+    "dev2": "node ./token-based/jwt_auth/index.js",
+    "dev3": "node ./session-basic-auth/session_auth/index.js",
+    "dev4": "node ./session-basic-auth/basic_auth/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "basic-auth": "^2.0.1",
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",
     "passport": "^0.6.0",
