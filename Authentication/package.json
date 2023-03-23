@@ -9,7 +9,8 @@
     "dev2": "node ./token-based/jwt_auth/index.js",
     "dev3": "node ./session-basic-auth/session_auth/index.js",
     "dev4": "node ./session-basic-auth/basic_auth/index.js",
-    "dev5": "nodemon ./OAUTH-SSO/index.js"
+    "dev5": "nodemon ./OAUTH-SSO/index.js",
+    "dev6": "nodemon ./AUTH0/index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.12.1",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "mime": "^3.0.0",
