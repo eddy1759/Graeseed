@@ -10,7 +10,8 @@
     "dev3": "node ./session-basic-auth/session_auth/index.js",
     "dev4": "node ./session-basic-auth/basic_auth/index.js",
     "dev5": "nodemon ./OAUTH-SSO/index.js",
-    "dev6": "nodemon ./AUTH0/index.js"
+    "dev6": "nodemon ./AUTH0/index.js",
+    "start": "node ./AUTH0/index.js"
   },
   "keywords": [],
   "author": "",
