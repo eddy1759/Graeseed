@@ -66,6 +66,7 @@ git clone https://github.com/eddy1759/Graeseed.git
 - [ODM and ORM](https://github.com/eddy1759/Graeseed/tree/main/ODM_and_ORM)
 - [OOP](https://github.com/eddy1759/Graeseed/tree/main/OOP)
 - [Express](https://github.com/eddy1759/Graeseed/tree/main/express)
+- [Caching and Validation](https://github.com/eddy1759/Graeseed/tree/main/caching-and-validation)
 
 
 <p align="right"><a href="#readme-top">back to top</a></p>
