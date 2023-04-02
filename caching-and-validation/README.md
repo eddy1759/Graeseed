@@ -119,7 +119,7 @@ yarn run dev
 - Twitter - [@eddyozone](https://twitter.com/eddyozone)
 - Email - edetasuquo23@gmail.com
 
-Project Link: [Graeseed Auth0](https://github.com/eddy1759/Graeseed/tree/main/caching-and-validation)
+Project Link: [Graeseed Caching and Validation](https://github.com/eddy1759/Graeseed/tree/main/caching-and-validation)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
