@@ -5,7 +5,7 @@
 <!-- Project Shields -->
 <div align="center">
 
-    [![Twitter][twitter-shield]][twitter-url]
+[![Twitter Badge](https://img.shields.io/badge/-@eddyozone-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/eddyozone)](https://twitter.com/eddyozone)
   [![Linkedin Badge](https://img.shields.io/badge/-EdetAsuquo-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/edet-e-asuquo)](https://www.linkedin.com/in/edet-e-asuquo)
   <br>
   [![AltSchool Badge](https://media.licdn.com/dms/image/C4D0BAQHu1uUVmUzWHw/company-logo_200_200/0/1672004393727?e=1687392000&v=beta&t=PbCIsWugjj9y3R2zH6jPd5P0b_b-GjI9XfLvg_a18ns)](https://www.linkedin.com/company/graeseed/)
@@ -137,8 +137,6 @@ This project was made possible by:
 
 <!-- Markdown Links & Images -->
 
-[twitter-shield]: https://img.shields.io/badge/-@eddyozone-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/eddyozone
-[twitter-url]: https://twitter.com/eddyozone
 [javascript]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1C
 [node]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
 [express]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
