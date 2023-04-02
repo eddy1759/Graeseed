@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <link rel="stylesheet" href="../../style.css"/>
+</head>
+<body>
+    <nav>
+        <ul>
+        <li><a class="navlink" href="/">Home</a></li>
+        <li><a class="navlink" href="/books/new">Add Book</a></li>
+        <li><a class="navlink" href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <form method="POST" action="/books/update/<%= book._id %>?_method=PUT">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="<%= book.title %>"><br>
+    
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" value="<%= book.author %>"><br>
+    
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" value="<%= book.genre %>"><br>
+    
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" value="<%= book.price %>"><br>
+    
+        <button type="submit">Update Book</button>
+      </form>
+</body>
+</html>
