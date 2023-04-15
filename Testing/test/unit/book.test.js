@@ -138,10 +138,31 @@ describe('Book API', () => {
           
             const res = await request(app).put(`/book/update/${id}`).send(update);
           
-            expect(res.statusCode).toEqual(404);
+            expect(res.status).toEqual(404);
             expect(res.body.msg).toEqual('Book not found');
         });
           
     })
 
+
+    describe('DELETE /book/:id', () => {
+        it('should delete a book', async () => {
+            const newbook = new book(bookData)
+            await newbook.save();
+
+            const res = await request(app).delete(`/book/${newbook._id}`);
+          
+            expect(res.status).toEqual(200);
+            expect(res.body.msg).toEqual('Book removed');
+        });
+          
+        it('should return 404 if book not found', async () => {
+            const id = '609d4fc59ab8c809a82a3b3a';
+          
+            const res = await request(app).delete(`/book/${id}`);
+          
+            expect(res.status).toEqual(404);
+            expect(res.body.msg).toEqual('Book not found');
+        });
+    });
 })
