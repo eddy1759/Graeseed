@@ -79,6 +79,7 @@ describe('Book API', () => {
         });
     });
 
+
     describe('GET /book/:id', () => {
         it('should get a single book by id', async () => {
             const newbook = new book(bookData)
@@ -102,6 +103,45 @@ describe('Book API', () => {
             expect(res.status).toEqual(404);
             expect(res.body.msg).toEqual('Book not found');
         });
+    })
+
+
+    describe('PUT /book/update/:id', () => {
+        it('should update a book', async () => {
+            const newbook = new book(bookData)
+            await newbook.save();
+
+            const update = {
+                title: 'Updated Book',
+                author: 'Updated Author',
+                year: 2020,
+                price: 20
+            };
+          
+            const res = await request(app).put(`/book/update/${newbook._id}`).send(update);
+          
+            expect(res.status).toEqual(200);
+            expect(res.body.book.title).toEqual('Updated Book');
+            expect(res.body.book.author).toEqual('Updated Author');
+            expect(res.body.book.year).toEqual(2020);
+            expect(res.body.book.price).toEqual(20);
+        });
+          
+        it('should return 404 if book not found', async () => {
+            const id = '609d4fc59ab8c809a82a3b3a';
+          
+            const update = {
+              title: 'Updated Book',
+              author: 'Updated Author',
+              price: 20,
+            };
+          
+            const res = await request(app).put(`/book/update/${id}`).send(update);
+          
+            expect(res.statusCode).toEqual(404);
+            expect(res.body.msg).toEqual('Book not found');
+        });
+          
     })
 
 })
