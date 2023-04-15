@@ -71,11 +71,11 @@ describe('Book API', () => {
             .set("Content-Type", "application/json");
     
             expect(res.status).toEqual(200);
-            expect(res.body.length).toEqual(3);
+            expect(res.body.books.length).toEqual(3);
             expect(res.body).toHaveProperty("books")
-            expect(res.body[0].books.title).toEqual('Test Book 1');
-            expect(res.body[1].books.title).toEqual('Test Book 2');
-            expect(res.body[2].books.title).toEqual('Test Book 3');
+            expect(res.body.books[0].title).toEqual('Test Book 1');
+            expect(res.body.books[1].title).toEqual('Test Book 2');
+            expect(res.body.books[2].title).toEqual('Test Book 3');
         });
     });
 
