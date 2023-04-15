@@ -28,6 +28,25 @@ const getBooks = async (req, res) => {
 };
 
 
+const getBookById = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const book = await Book.findById(id)
+    if (!book) {
+      return res.status(404).json({
+        msg: "Book not found"
+      })
+    }
+    res.status(200).json({
+      book: book
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: 'Server error' });
+  }
+};
+
+
 const updateBook = async (req, res) => {
   const id = req.params.id;
   const { title, author, year, price } = req.body;
@@ -67,6 +86,7 @@ const deleteBook = async (req, res) => {
 module.exports = {
   createBook,
   getBooks,
+  getBookById,
   updateBook,
   deleteBook
 }

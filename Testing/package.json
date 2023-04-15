@@ -7,13 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles --forceExit"
+    "test": "jest --runInBand --detectOpenHandles --testTimeout=10000 --forceExit"
   },
   "jest": {
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
       "<rootDir>/test/setup.js"
     ],
+
     "globalSetup": "./test/setup.js"
   },
   "keywords": [],

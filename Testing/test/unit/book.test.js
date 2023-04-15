@@ -45,7 +45,7 @@ describe('Book API', () => {
     })
 
 
-    describe('GET /api/books', () => {
+    describe('GET /books', () => {
         it('should get all books', async () => {
             const book1 = new book(bookData) 
 
@@ -71,12 +71,37 @@ describe('Book API', () => {
             .set("Content-Type", "application/json");
     
             expect(res.status).toEqual(200);
-            expect(res.body.books.length).toEqual(3);
             expect(res.body).toHaveProperty("books")
+            expect(res.body.books.length).toEqual(3);
             expect(res.body.books[0].title).toEqual('Test Book 1');
             expect(res.body.books[1].title).toEqual('Test Book 2');
             expect(res.body.books[2].title).toEqual('Test Book 3');
         });
     });
+
+    describe('GET /book/:id', () => {
+        it('should get a single book by id', async () => {
+            const newbook = new book(bookData)
+            await newbook.save()
+    
+            const res = await request(app).get(`/book/${newbook._id}`);
+    
+            expect(res.status).toEqual(200);
+            expect(res.body).toHaveProperty("book")
+            expect(res.body.book.title).toEqual('Test Book 1');
+            expect (res.body.book.author).toEqual('Test Author 1');
+            expect(res.body.book.year).toEqual(2019)
+            expect(res.body.book.price).toEqual(30);
+        });
+
+        it('should return 404 if book not found', async () => {
+            const id = '609d4fc59ab8c809a82a3b3a';
+          
+            const res = await request(app).get(`/book/${id}`);
+          
+            expect(res.status).toEqual(404);
+            expect(res.body.msg).toEqual('Book not found');
+        });
+    })
 
 })
