@@ -1,5 +1,3 @@
-
-
 /**
  * @desc A http logging middleware
  * @param {object} req - Request object

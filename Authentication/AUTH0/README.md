@@ -1,5 +1,3 @@
-
-
 <!-- Back to Top Navigation Anchor -->
 
 <a name="readme-top"></a>

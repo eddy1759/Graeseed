@@ -5,7 +5,7 @@ SELECT datname FROM pg_database
 WHERE datistemplate = false;
 
 -- Creating a database called student
-CREATE DATABASE students;
+CREATE DATABASE bookstore;
 
 -- Dropping database
 DROP DATABASE students;
@@ -37,7 +37,7 @@ INSERT INTO students (name, email, age)
 VALUES ('blessing', 'blessing@example.com', 15);
 
 -- Selecting Data from a Table:
-SELECT * FROM students
+SELECT * FROM bookstore
 
 -- Updating Data in a Table:
 UPDATE students

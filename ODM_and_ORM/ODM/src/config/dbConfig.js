@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const CONFIG = require('./config').default
+const CONFIG = require('./config')
 require('dotenv').config();
 
 const connectToMongoDb = () => {

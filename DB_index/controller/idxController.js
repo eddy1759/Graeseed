@@ -60,5 +60,6 @@ const createMongoDBIndex = async (req, res) => {
       await client.close();
     }
   };
+  
 
 module.exports = { createPostgreSQLIndex, createMongoDBIndex };
