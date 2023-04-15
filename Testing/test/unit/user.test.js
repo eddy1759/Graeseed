@@ -1,4 +1,3 @@
-const User = require('../../models/User')
 const request = require('supertest')
 const app = require('../../app')
 const connectDB = require('../../dbConfig')
@@ -60,5 +59,4 @@ describe('USER API /user', () => {
             expect(res.body.user).toHaveProperty("email", "eddy@mail.com")
         });
     });
-})
-
+});
