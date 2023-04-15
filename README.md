@@ -67,6 +67,7 @@ git clone https://github.com/eddy1759/Graeseed.git
 - [OOP](https://github.com/eddy1759/Graeseed/tree/main/OOP)
 - [Express](https://github.com/eddy1759/Graeseed/tree/main/express)
 - [Caching and Validation](https://github.com/eddy1759/Graeseed/tree/main/caching-and-validation)
+- [Logging and Security](https://github.com/eddy1759/Graeseed/tree/main/logging-and-security)
 
 
 <p align="right"><a href="#readme-top">back to top</a></p>
