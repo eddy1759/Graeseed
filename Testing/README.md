@@ -2,7 +2,7 @@
 
 ## Testing with Supertest and Jest
 
-<p align="right">This project provides a basic example of how to test a bookstore API using Supertest and Jest.</p>
+This project provides a basic example of how to test a bookstore API using Supertest and Jest
 
 ### Built With:
 
