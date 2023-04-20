@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles --testTimeout=10000 --forceExit"
+    "test": "jest --coverage --runInBand --detectOpenHandles --testTimeout=10000 --forceExit"
   },
   "jest": {
     "testEnvironment": "node",
