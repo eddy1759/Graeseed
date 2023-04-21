@@ -6,7 +6,7 @@ async function getAllBooks (req, res) {
     res.status(200).json(books)
 }
 
-async function addBooks (req, res) {
+async function addBook (req, res) {
     const { title,author, year, price} = req.body
     try {
         const newBook = await Book.create({
@@ -75,6 +75,7 @@ async function deleteBook (req, res) {
 
 module.exports = {
     getAllBooks,
+    addBook,
     getBookById,
     updateBook,
     deleteBook
