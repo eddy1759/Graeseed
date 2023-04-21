@@ -1,12 +1,5 @@
-const Book = require('./Book')
-const { Queue } = require('bull')
-const { Job } = require('bull')
-
-const searchJob = require('./util/searchJob')
-
-const searchQueue = new Queue('search')
-
-
+const Book = require('./bookModel')
+const SearchWorker = require('./workers/searchWorker')
 
 async function getAllBooks (req, res) {
     const books = await Book.find({})
@@ -29,6 +22,9 @@ async function addBook (req, res) {
 async function getBookById (req, res) {
     const bookId = req.params.id;
     try {
+        if (req.query.q) {
+            return search(req, res);
+        }
         const book = await Book.findById(bookId);
         if (!book) {
             return res.status(404).send('Book with id not found');
@@ -78,22 +74,17 @@ async function deleteBook (req, res) {
     }
 };
 
-async function search (req, res) {
-    const query = req.query.q
-    const job = await searchQueue.add({query})
-    res.json({ jobId: job.id })
-}
 
-async function getJobId (req, res) {
-    const jobId = req.params.jobId;
-    const job = await Job.fromId(searchQueue, jobId);
-    if (job) {
-      res.status(200).json({ status: job.status, result: job.returnvalue });
-    } else {
-      res.status(404).json({ message: `Job ${jobId} not found` });
+async function search (req, res) {
+    const query = req.query.q;
+    const searchWorker = new SearchWorker();
+    try {
+      const result = await searchWorker.search(query);
+      res.json(result);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
     }
 }
-
 
 module.exports = {
     getAllBooks,
@@ -101,6 +92,5 @@ module.exports = {
     getBookById,
     updateBook,
     deleteBook,
-    search,
-    getJobId
+    search
 };
