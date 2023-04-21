@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "bull": "^4.10.4",
-    "bullmq": "^3.12.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.4"
