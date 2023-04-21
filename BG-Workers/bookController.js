@@ -1,4 +1,11 @@
 const Book = require('./Book')
+const { Queue } = require('bull')
+const { Job } = require('bull')
+
+const searchJob = require('./util/searchJob')
+
+const searchQueue = new Queue('search')
+
 
 
 async function getAllBooks (req, res) {
@@ -55,8 +62,6 @@ async function updateBook (req, res) {
     }
 };
 
-
-
 async function deleteBook (req, res) {
     const bookId = req.params.id;
     try {
@@ -73,10 +78,29 @@ async function deleteBook (req, res) {
     }
 };
 
+async function search (req, res) {
+    const query = req.query.q
+    const job = await searchQueue.add({query})
+    res.json({ jobId: job.id })
+}
+
+async function getJobId (req, res) {
+    const jobId = req.params.jobId;
+    const job = await Job.fromId(searchQueue, jobId);
+    if (job) {
+      res.status(200).json({ status: job.status, result: job.returnvalue });
+    } else {
+      res.status(404).json({ message: `Job ${jobId} not found` });
+    }
+}
+
+
 module.exports = {
     getAllBooks,
     addBook,
     getBookById,
     updateBook,
-    deleteBook
+    deleteBook,
+    search,
+    getJobId
 };
