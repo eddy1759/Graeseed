@@ -7,32 +7,15 @@ Some of the advantages of using GraphQL include:
 - Reduced network requests: Since clients can request only the data they need, there is no need for multiple round trips to the server to fetch related data.
 - Strong typing: GraphQL schemas define the types of data that can be queried and returned, making it easy to catch errors before they happen.
 - Flexibility: GraphQL APIs can evolve over time without breaking clients, since clients can specify the data they need and don't rely on the server to provide a fixed response structure.
-- Tooling: GraphQL comes with powerful tooling, such as GraphiQL, which provides an interactive interface for exploring and testing GraphQL APIs.
+- Tooling: GraphQL comes with powerful tooling, such as `GraphiQL`, which provides an interactive interface for exploring and testing GraphQL APIs.
 
+### Building Blocks of a GraphQL API
+- **Schema:** A GraphQL schema defines the types and fields that are available for clients to query and mutate data. It serves as a contract between the client and server, outlining what data can be accessed and how it can be manipulated.
 
-### Getting Started
+- **TypeDef:** Type definitions (or typeDefs) are a way of defining the GraphQL schema using the GraphQL schema language. They define the types of data that can be queried or mutated and the fields that are available on those types.
 
-- `Clone` the repository and navigate to the project directory `cd GraphQl `.
+- **Resolvers:** Resolvers are functions that resolve a GraphQL query or mutation by fetching data from a data source and returning the requested data. They are responsible for mapping the query to the corresponding data and can be used to retrieve data from a variety of sources such as a database or API.
 
-- Run `npm install` to install all dependencies.
+- **Mutation:** A GraphQL mutation is a request to modify data on the server. It allows clients to make changes to data, such as creating, updating, or deleting records. Mutations are executed using the same syntax as queries, but they use the `mutation` keyword instead of `query.`
 
-- Start the server `node index.js`.
-
-- Open your browser and navigate to `http://localhost:3000/graphql`. You should see the GraphiQL interface, which is an interactive tool for testing GraphQL APIs.
-
-- In the left-hand panel, type the following query: 
-    - ``` 
-        { 
-            message 
-        } 
-    ```
-- Then click the Play button `(the triangle button on the top left of the interface)`. You should see the response in the right-hand panel:
-```
-{
-  "data": {
-    "message": "Hello and Welcome to Graeseed learning"
-  }
-}
-
-```
-
+- **Query:** A GraphQL query is a request for data from the server. It specifies the fields that should be returned and any arguments that should be passed to the query. Queries are executed by sending a request to the server, which returns the requested data.
