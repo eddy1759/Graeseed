@@ -1,6 +1,5 @@
 const Book = require('./model/Book')
 const User = require('./model/User')
-const { generateToken, verifyToken } = require('./utils/helper')
 
 
 const resolvers = {
@@ -14,11 +13,7 @@ const resolvers = {
                 throw error
             }
         },
-        getBooks: async (_, __, {user}) => {
-            if (!user) {
-                throw new Error('Unauthorized')
-            }
-
+        getBooks: async () => {
             try {
                 const books = await Book.find()
                 return books
@@ -27,11 +22,7 @@ const resolvers = {
                 throw error
             }
         },
-        getBook: async (_, { id }, {user}) => {
-            if (!user) {
-                throw new Error('Uanuthorized')
-            }
-
+        getBook: async (_, { id }) => {
             try {
                 const book = await Book.findById(id);
                 if (!book) {
@@ -43,11 +34,7 @@ const resolvers = {
                 throw error
             }
         },
-        getBooksByAuthor: async (_, { author }, { user }) => {
-            if (!user) {
-                throw new Error('Unauthorized')
-            }
-            
+        getBooksByAuthor: async (_, { author }) => {
             try {
                 const books = await Book.find({ author: author });
                 return books;
@@ -58,11 +45,7 @@ const resolvers = {
         }
     },
     Mutation: {
-        createBook: async (_, { input }, { user }) => {
-            if(!user) {
-                throw new Error('Unauthorized')
-            }
-
+        createBook: async (_, { input }) => {
             try {
                 const book = new Book({
                     title: input.title,
@@ -78,11 +61,7 @@ const resolvers = {
                 throw error;
             }
         },
-        updateBook: async(_, { id, input }, { user }) => {
-            if (!user) {
-                throw new Error("Unauthorized")
-            }
-
+        updateBook: async(_, { id, input }) => {
             try {
                 const book = await Book.findById(id);
                 if (!book) {
@@ -99,11 +78,7 @@ const resolvers = {
                 throw error;
             }
         },
-        deleteBook: async (_, { id }, { user }) => {
-            if (!user) {
-              throw new Error('Unauthorized');
-            }
-          
+        deleteBook: async (_, { id }) => {
             try {
               const book = await Book.findById(id);
               if (!book) {
@@ -132,18 +107,17 @@ const resolvers = {
         },
         login: async (_, { email, password }) => {
             try {
-              const user = await User.findOne({ email });
-              if (!user) {
-                throw new Error('User not found');
-              }
+                const user = await User.findOne({ email });
+                if (!user) {
+                    throw new Error('User not found');
+                }
           
-              const match = await user.comparePassword(password);
-              if (!match) {
-                throw new Error('Invalid password');
-              }
+                const match = await user.comparePassword(password);
+                if (!match) {
+                    throw new Error('Invalid password');
+                }
+                return user
           
-              const token = generateToken(user);
-              return { token };
             } catch (error) {
               console.error(error);
               throw error;

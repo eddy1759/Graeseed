@@ -29,11 +29,7 @@ const typeDefs = gql`
         createBook(title: String!, author: String!, price: Float!, yearPublished: Int!): Book!
         updateBook(id: ID!, title: String!, author: String!, price: Float!, yearPublished: Int!): Book!
         deleteBook(id: ID!): Book!
-        login(email: String!, password: String!): Token!
-    }
-
-    type Token {
-        token: String!
+        login(email: String!, password: String!): User!
     }
 `;
 module.exports = typeDefs;

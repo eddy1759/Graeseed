@@ -9,7 +9,7 @@ const connectDB = async () => {
     await mongoose.connect(process.env.MONGO_DB)
 
     mongoose.connection.on("connected", () => {
-        console.info("Connection to database succesfully")
+        console.log("Connection to database succesfully")
     })
 
     mongoose.connection.on("error", (error) => {
