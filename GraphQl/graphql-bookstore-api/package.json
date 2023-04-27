@@ -1,0 +1,20 @@
+{
+  "name": "graphql-bookstore-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edet Emmanuel Asuquo",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^3.12.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "graphql-config": "^4.5.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.5"
+  }
+}
